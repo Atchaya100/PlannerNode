@@ -1,0 +1,48 @@
+const mongoose=require('mongoose');
+const { useLinkClickHandler } = require('react-router-dom');
+const taskSchema = new mongoose.Schema({
+    tasks:{
+        type:String,
+        required:true
+    },
+    userid:{
+        type:String,
+        required:true
+    },
+    createdBy:{
+        type:String,
+        required:true
+    },
+    type:{
+        type:String,
+        required:true
+    },
+    status:{
+        type:String,
+        required:true
+    },
+    history:{
+        type:Object,
+        required:false
+    },
+    date:{
+        type:Date,
+        required:true
+    },
+    createdat:{
+        type:String,
+        required:true
+    },
+    startTime:{
+        type:String,
+        required:true
+    },
+    endTime:{
+        type:String,
+        required:true
+    }
+},
+{
+    collection:"tasks"
+});
+module.exports=mongoose.model("tasks",taskSchema);
