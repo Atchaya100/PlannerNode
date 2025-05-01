@@ -9,8 +9,8 @@ const connectDb = require("./src/db/index");
 const cookieParser = require("cookie-parser");
 
 const app = express();
-app.use(cors({ origin: 'https://sweet-twilight-f60d5f.netlify.app',credentials: true}));
-
+app.use(cors({ origin: 'http://localhost:3000',credentials: true}));
+// https://sweet-twilight-f60d5f.netlify.app
 // http://localhost:3000
 app.use(express.json());
 app.use(cookieParser());
@@ -51,6 +51,7 @@ app.use(
     }
   })
 );
+app.set('trust proxy', 1);
 
 
 app.use('/auth', authRoutes);
