@@ -60,6 +60,11 @@ app.get('/ping', (req, res) => {
   res.json({ message: 'pong' });
 });
 
+app.head('/ping', (req, res) => {
+  res.status(200).end(); 
+});
+
+
 // Error handling middleware
 app.use((err, req, res, next) => {
     console.error(err.stack);
