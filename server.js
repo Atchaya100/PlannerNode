@@ -56,6 +56,10 @@ app.set('trust proxy', 1);
 
 app.use('/auth', authRoutes);
 
+app.get('/ping', (req, res) => {
+  res.json({ message: 'pong' });
+});
+
 // Error handling middleware
 app.use((err, req, res, next) => {
     console.error(err.stack);
