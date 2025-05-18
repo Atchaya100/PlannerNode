@@ -11,4 +11,9 @@ router.post('/logout', loginController.logout);
 router.post('/createTask',taskController.createTask)
 router.post('/bulkInsert',taskController.saveBulkTask)
 router.post('/getTask',taskController.getTask)
+router.post('/updateTask',taskController.updateTask)
+router.post('/savePlan',taskController.createPlan)
+router.post('/getPlans',taskController.getPlans)
+
+
 module.exports = router;

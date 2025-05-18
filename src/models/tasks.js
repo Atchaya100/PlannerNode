@@ -17,6 +17,10 @@ const taskSchema = new mongoose.Schema({
         type:String,
         required:true
     },
+    goal:{
+        type:String,
+        required:false
+    },
     status:{
         type:String,
         required:true
@@ -36,6 +40,10 @@ const taskSchema = new mongoose.Schema({
     startTime:{
         type:String,
         required:true
+    },
+    resources:{
+        type:Object,
+        required:false
     },
     endTime:{
         type:String,
