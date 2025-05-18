@@ -28,30 +28,30 @@ connectDb()
 //     cookie: { secure: false, httpOnly: true, maxAge: 1000 * 60 * 30 }
 // }));
 
-app.use(session({
-  secret: "test", // Secret key to encrypt session
-  resave: true, // Don't save session if unchanged
-  saveUninitialized: true, // Don't save empty sessions
-  cookie: { 
-    secure: false,    
-    httpOnly: true, 
-    sameSite: "lax"
-  } 
-}));
+// app.use(session({
+//   secret: "test", // Secret key to encrypt session
+//   resave: true, // Don't save session if unchanged
+//   saveUninitialized: true, // Don't save empty sessions
+//   cookie: { 
+//     secure: false,    
+//     httpOnly: true, 
+//     sameSite: "lax"
+//   } 
+// }));
 
-// app.use(
-//   session({
-//     secret: "test", // Secret key
-//     resave: true,
-//     saveUninitialized: true,
-//     cookie: { 
-//       secure: true,          // 🔥 MUST be true for HTTPS
-//       httpOnly: true,
-//       sameSite: "None"       // 🔥 allow cross-site cookies between Netlify + Render
-//     }
-//   })
-// );
-// app.set('trust proxy', 1);
+app.use(
+  session({
+    secret: "test", // Secret key
+    resave: true,
+    saveUninitialized: true,
+    cookie: { 
+      secure: true,          // 🔥 MUST be true for HTTPS
+      httpOnly: true,
+      sameSite: "None"       // 🔥 allow cross-site cookies between Netlify + Render
+    }
+  })
+);
+app.set('trust proxy', 1);
 
 
 app.use('/auth', authRoutes);
